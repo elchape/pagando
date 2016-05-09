@@ -1,0 +1,19 @@
+<ion-view title="Ingresar pago" id="page4">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list"></form>
+        <h4 id="ingresarPago-heading1" style="color:#000000;">Seleccione tarjeta</h4>
+        <ion-list>
+            <ion-checkbox>Visa XXXX-XXXX-XXXX-1234</ion-checkbox>
+            <ion-checkbox>Master XXXX-XXXX-XXXX-1234</ion-checkbox>
+        </ion-list>
+        <a ui-sref="agregarTarjeta" id="ingresarPago-button15" class="button button-energized  button-block">Agregar Tarjeta</a>
+        <h4 id="ingresarPago-heading2" style="color:#000000;">Ingrese importe</h4>
+        <form class="list">
+            <label class="item item-input">
+                <input type="number" placeholder="$0">
+            </label>
+        </form>
+        <a ui-sref="pinVerificacion" id="ingresarPago-button9" class="button button-balanced  button-block">Pagar</a>
+        <button id="ingresarPago-button13" class="button button-dark  button-block">Volver</button>
+    </ion-content>
+</ion-view>
