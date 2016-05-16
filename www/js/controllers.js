@@ -1,4 +1,4 @@
-angular.module('app.controllers', ['ionic'])
+angular.module('app.controllers', ['ionic', 'ngCordova'])
 
     .controller('ingresarCtrl', function($scope) {
 
@@ -8,7 +8,18 @@ angular.module('app.controllers', ['ionic'])
 
 })
 
-    .controller('pagarCtrl', function($scope) {
+    .controller('pagarCtrl', function($scope, $cordovaBarcodeScanner) {
+    
+        $scope.scanBarcode = function() {
+        $cordovaBarcodeScanner.scan().then(function(imageData) {
+            alert(imageData.text);
+            console.log("Barcode Format -> " + imageData.format);
+            console.log("Cancelled -> " + imageData.cancelled);
+        }, function(error) {
+            console.log("An error happened -> " + error);
+        });
+    };
+
 
 })
 
@@ -28,7 +39,7 @@ angular.module('app.controllers', ['ionic'])
 
 })
 
-    .controller('valorarLocalCtrl', function($scope, $ionicPopup) {
+    .controller('valorarLocalCtrl', function($scope, $ionicPopup, $location) {
     $scope.mostrarConfirmacion = function() {
         var alertPopup = $ionicPopup.alert({
             title: 'Confirmación de pago',
