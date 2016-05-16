@@ -1,4 +1,4 @@
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['ionic'])
 
     .controller('ingresarCtrl', function($scope) {
 
@@ -111,7 +111,15 @@ angular.module('app.controllers', [])
 })
 
 .controller('mapaCtrl', function($scope, $compile, $location) {
-        var myLatlng = new google.maps.LatLng(34.603711, -58.381585);
+    
+    
+    ionic.Platform.ready(function() { 
+        $scope.goPayment = function() {
+            $location.path('side-menu/history');
+        };
+              
+    
+    var myLatlng = new google.maps.LatLng(34.603711, -58.381585);
  
         var mapOptions = {
             center: myLatlng,
@@ -147,8 +155,10 @@ angular.module('app.controllers', [])
           $scope.clickTest = function() {
         $location.path('side-menu/pay');
       };
-          
-      
+    
+    
+        
+    }); 
     })
    
 .controller('listadoCtrl', function($scope) {

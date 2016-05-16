@@ -15,6 +15,7 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
+    <allow-navigation href="http://*/*" />
     <name>Pagando</name>
     <description>
         An Ionic Framework and Cordova project.
